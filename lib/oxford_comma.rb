@@ -1,10 +1,4 @@
-def oxford_comma(array)
-  case array.size
-  when 1
-  return array.join
-  when 2
-    return array.join(" and ")
-  when array.size>=4
-    return array[0...-2].join(",") + array[-1]
-end
+def oxford_comma(array = nil)
+  return array.to_s if array.nil? or array.length <= 1
+  array[0..-2].join(", ") + " and " + array[-1]
 end
